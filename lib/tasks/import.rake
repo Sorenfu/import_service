@@ -15,5 +15,6 @@ namespace :xlsx do
         end
       end
     end
+    p 'Done!'
   end
 end

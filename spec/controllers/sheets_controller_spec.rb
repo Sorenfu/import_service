@@ -7,6 +7,8 @@ RSpec.describe SheetsController, type: :controller do
 
     it 'returns a success response' do
       get :index
+      sheet.reload
+
       expect(assigns(:sheets).count).to eq 1
       expect(assigns(:sheets)).to eq [sheet]
     end
