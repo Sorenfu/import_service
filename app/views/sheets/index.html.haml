@@ -1,19 +1,22 @@
-%h1 Listing sheets
+- if @sheets.present?
+  %h1 Listing sheets
 
-%table.table.table-bordered.table-hover
-  %thead
-    %tr.active
-      %th Pol
-      %th Pod
-      %th Rate wm
-      %th Rate min
-      %th Tt
+  %table.table.table-bordered.table-hover
+    %thead
+      %tr.active
+        %th Pol
+        %th Pod
+        %th Rate wm
+        %th Rate min
+        %th Tt
 
-  %tbody.table-hover
-    - @sheets.each do |sheet|
-      %tr
-        %td= sheet.pol
-        %td= sheet.pod
-        %td= sheet.rate_wm
-        %td= sheet.rate_min
-        %td= sheet.tt
+    %tbody.table-hover
+      - @sheets.each do |sheet|
+        %tr
+          %td= sheet.pol
+          %td= sheet.pod
+          %td= sheet.rate_wm
+          %td= sheet.rate_min
+          %td= sheet.tt
+- else
+  %h3= "Please run <strong>rake xlsx:get_data</strong> to the see list of data".html_safe
